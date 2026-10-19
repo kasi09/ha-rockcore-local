@@ -1,0 +1,91 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Rockcore micro inverter",
+        "description": "Address of the inverter's WiFi module (found automatically if possible) and the port Home Assistant listens on. The inverter must be running - at night it has no power.",
+        "data": {
+          "host": "Host",
+          "port": "Port"
+        },
+        "data_description": {
+          "host": "IP address of the WiFi module.",
+          "port": "TCP port Home Assistant listens on for the module."
+        }
+      },
+      "socket_b": {
+        "title": "Send data to Home Assistant",
+        "description": "The WiFi module can send a copy of the inverter data to Home Assistant on its second socket (socket B). The cloud connection and the RCMI app stay unchanged; the module restarts once.\n\nSocket B now: `{current}`\nNew target: `{target}`\nCommand: `{command}`\n\nWhen this integration is removed, the previous setting is restored.",
+        "data": {
+          "configure_socket_b": "Set socket B now"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "The WiFi module does not answer. At night the inverter has no power - try again in daylight.",
+      "configure_failed": "The module did not accept the setting."
+    },
+    "abort": {
+      "already_configured": "This inverter is already configured."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "power": {
+        "name": "Power"
+      },
+      "pv1_power": {
+        "name": "PV1 power"
+      },
+      "pv2_power": {
+        "name": "PV2 power"
+      },
+      "pv3_power": {
+        "name": "PV3 power"
+      },
+      "pv4_power": {
+        "name": "PV4 power"
+      },
+      "pv1_voltage": {
+        "name": "PV1 voltage"
+      },
+      "pv2_voltage": {
+        "name": "PV2 voltage"
+      },
+      "pv1_current": {
+        "name": "PV1 current"
+      },
+      "pv2_current": {
+        "name": "PV2 current"
+      },
+      "grid_voltage": {
+        "name": "Grid voltage"
+      },
+      "grid_frequency": {
+        "name": "Grid frequency"
+      },
+      "temperature": {
+        "name": "Temperature"
+      },
+      "energy_total": {
+        "name": "Total energy"
+      },
+      "energy_today": {
+        "name": "Energy today"
+      },
+      "last_frame": {
+        "name": "Last data"
+      }
+    },
+    "binary_sensor": {
+      "connected": {
+        "name": "Connection"
+      }
+    }
+  },
+  "exceptions": {
+    "port_in_use": {
+      "message": "Port {port} is already in use."
+    }
+  }
+}

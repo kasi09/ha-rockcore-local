@@ -1,0 +1,91 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Rockcore-Mikrowechselrichter",
+        "description": "Adresse des WLAN-Moduls am Wechselrichter (wenn möglich automatisch gefunden) und der Port, auf dem Home Assistant lauscht. Der Wechselrichter muss laufen - nachts hat er keinen Strom.",
+        "data": {
+          "host": "Adresse",
+          "port": "Port"
+        },
+        "data_description": {
+          "host": "IP-Adresse des WLAN-Moduls.",
+          "port": "TCP-Port, auf dem Home Assistant für das Modul lauscht."
+        }
+      },
+      "socket_b": {
+        "title": "Daten an Home Assistant senden",
+        "description": "Das WLAN-Modul kann über seinen zweiten Kanal (Socket B) eine Kopie der Wechselrichterdaten an Home Assistant schicken. Die Cloud-Verbindung und die RCMI-App bleiben unverändert; das Modul startet einmal neu.\n\nSocket B jetzt: `{current}`\nNeues Ziel: `{target}`\nBefehl: `{command}`\n\nWird diese Integration entfernt, wird die vorherige Einstellung wiederhergestellt.",
+        "data": {
+          "configure_socket_b": "Socket B jetzt einstellen"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Das WLAN-Modul antwortet nicht. Nachts hat der Wechselrichter keinen Strom - bitte bei Tageslicht erneut versuchen.",
+      "configure_failed": "Das Modul hat die Einstellung nicht übernommen."
+    },
+    "abort": {
+      "already_configured": "Dieser Wechselrichter ist bereits eingerichtet."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "power": {
+        "name": "Leistung"
+      },
+      "pv1_power": {
+        "name": "Leistung PV1"
+      },
+      "pv2_power": {
+        "name": "Leistung PV2"
+      },
+      "pv3_power": {
+        "name": "Leistung PV3"
+      },
+      "pv4_power": {
+        "name": "Leistung PV4"
+      },
+      "pv1_voltage": {
+        "name": "Spannung PV1"
+      },
+      "pv2_voltage": {
+        "name": "Spannung PV2"
+      },
+      "pv1_current": {
+        "name": "Strom PV1"
+      },
+      "pv2_current": {
+        "name": "Strom PV2"
+      },
+      "grid_voltage": {
+        "name": "Netzspannung"
+      },
+      "grid_frequency": {
+        "name": "Netzfrequenz"
+      },
+      "temperature": {
+        "name": "Temperatur"
+      },
+      "energy_total": {
+        "name": "Energie gesamt"
+      },
+      "energy_today": {
+        "name": "Energie heute"
+      },
+      "last_frame": {
+        "name": "Letzte Daten"
+      }
+    },
+    "binary_sensor": {
+      "connected": {
+        "name": "Verbindung"
+      }
+    }
+  },
+  "exceptions": {
+    "port_in_use": {
+      "message": "Port {port} ist bereits belegt."
+    }
+  }
+}

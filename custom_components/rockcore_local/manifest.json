@@ -1,0 +1,13 @@
+{
+  "domain": "rockcore_local",
+  "name": "Rockcore Micro Inverter (local)",
+  "codeowners": ["@kasi09"],
+  "config_flow": true,
+  "dependencies": ["network"],
+  "documentation": "https://github.com/kasi09/ha-rockcore-local",
+  "integration_type": "device",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/kasi09/ha-rockcore-local/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}
